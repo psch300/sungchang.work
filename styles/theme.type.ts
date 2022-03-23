@@ -1,15 +1,9 @@
-import 'styled-components';
+import "styled-components";
 
-type ScreenType = (
-  'sm'
-  | 'md'
-  | 'lg'
-  | 'xl'
-  | '2xl'
-);
+type ScreenType = "sm" | "md" | "lg" | "xl" | "2xl";
 
-type SpacingType = (
-  'px'
+type SpacingType =
+  | "px"
   | 0
   | 0.5
   | 1
@@ -43,49 +37,50 @@ type SpacingType = (
   | 64
   | 72
   | 80
-  | 96
-);
+  | 96;
 
-type FontSizeType = (
-  'xs'
-  | 'sm'
-  | 'base'
-  | 'lg'
-  | 'xl'
-  | '2xl'
-  | '3xl'
-  | '4xl'
-  | '5xl'
-  | '6xl'
-  | '7xl'
-  | '8xl'
-  | '9xl'
-);
+type FontSizeType =
+  | "xs"
+  | "sm"
+  | "base"
+  | "lg"
+  | "xl"
+  | "2xl"
+  | "3xl"
+  | "4xl"
+  | "5xl"
+  | "6xl"
+  | "7xl"
+  | "8xl"
+  | "9xl";
 
-type FontWeightType = (
-  'thin'
-  | 'extralight'
-  | 'light'
-  | 'normal'
-  | 'medium'
-  | 'semibold'
-  | 'bold'
-  | 'extrabold'
-  | 'black'
-);
+type FontWeightType =
+  | "thin"
+  | "extralight"
+  | "light"
+  | "normal"
+  | "medium"
+  | "semibold"
+  | "bold"
+  | "extrabold"
+  | "black";
 
-declare module 'styled-components' {
+declare module "styled-components" {
   export interface DefaultTheme {
-    screens: Record<ScreenType, CSSProperties['minWidth']>,
-    spacing: Record<SpacingType, CSSProperties['margin'] | CSSProperties['padding']>,
-    fontSize: Record<FontSizeType, [CSSProperties['fontSize'], Record<'lineHeight', CSSProperties['lineHeight']>]>,
-    fontWeight: Record<FontWeightType, CSSProperties['fontWeight']>,
+    screens: Record<ScreenType, CSSProperties["minWidth"]>;
+    spacing: Record<
+      SpacingType,
+      CSSProperties["margin"] | CSSProperties["padding"]
+    >;
+    fontSize: Record<
+      FontSizeType,
+      [
+        CSSProperties["fontSize"],
+        Record<"lineHeight", CSSProperties["lineHeight"]>
+      ]
+    >;
+    fontWeight: Record<FontWeightType, CSSProperties["fontWeight"]>;
   }
 }
 
-export type {
-  ScreenType,
-  SpacingType,
-  FontSizeType,
-  FontWeightType,
-};
+export type { ScreenType, SpacingType, FontSizeType, FontWeightType };
